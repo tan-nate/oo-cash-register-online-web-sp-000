@@ -10,6 +10,7 @@ class CashRegister
   
   def add_item(item, price, quantity = 1)
     @total += price * quantity
+    @@items << item
   end
   
   def apply_discount
@@ -19,5 +20,9 @@ class CashRegister
     else
       "After the discount, the total comes to $#{@total.to_i}."
     end
+  end
+  
+  def items
+    @@items
   end
 end
