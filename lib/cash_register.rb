@@ -16,6 +16,7 @@ class CashRegister
       @items << item
       i += 1
     end
+    @last_transaction = price * quantity
   end
   
   def apply_discount
@@ -29,5 +30,9 @@ class CashRegister
   
   def items
     @items
+  end
+  
+  def void_last_transaction
+    
   end
 end
